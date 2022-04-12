@@ -73,6 +73,42 @@ hcxdumptool -o pacchetti.pcapng -i xmon --enable_status=1
 
 
 #### PASSO 4 - CONVERTIRE IL FILE OUTPUT DI HCXDUMPTOOL
+Il file .pcapng deve ora essere convertito in un formato comprensibile ad hashcat.<br>
+In accordo a quanto previsto per la versione 6.2.5 di hashcat costruiamo un file con estensione .hc22000.
+
+```Bash
+ hcxpcapngtool -o hash.hc22000 -E wordlist pacchetti.pcapng
+ ```
+ 
+ 
+ #### PASSO 5 - LANCIARE IL MECCANISMO DI BRUTEFORCE
+Se si osserva il file appena creato esso segue la seguente forma:
+
+**PROTOCOL** * **TYPE** * **PMKID/MIC** * **MACAP** * **MACCLIENT** * **ESSID** * **ANONCE** * **EAPOL** * **MESSAGEPAIR**
+
+L'ESSID è espresso in esadecimale.<br>
+Al solo titolo di esempio, si lanci il seguente script per decodificarli:
+
+```Bash
+awk -F "*" ' system("echo " $6 " | xxd -r -p; echo" ) }' hash.hc22000
+```
+ 
+Si hanno tutte le informazioni necessarie per iniziare la computazione del PMKID.<br>
+Come si è visto nell'articolo è necessario iniziare da una password, generare il PMK e successivamente il PMKID*.<br>
+Ma da quali password iniziare?<br>
+Si può utilizzare una lista di password candidate o si può esprimere una **mask**.<br>
+Una mask descrive la struttura della passoword: si immagini di avere una password composta da 8 cifre decimali.<br>
+Il comando è il seguente
+
+```Bash
+hashcat -m 22000 hash.hc22000 -a 3 -w 4 ?d?d?d?d?d?d?d?d
+```
+
+Il parametro -a indica l'hash type e il parametro -w indica il profilo di workload.
+
+
+
+et voilà, tocca solamente attendere!
 
 
 
