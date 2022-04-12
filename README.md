@@ -17,7 +17,7 @@ Conoscendo il processo generativo del PMK dalla password e quello del PMKID a pa
 - [hashcat](https://hashcat.net/hashcat/), uno strumento che implementa diversi algoritmi di cifratura e utilizzato per il recupero password
 
 
-#### PASSO 1 - INSTALLARE I VARI TOOL
+## PASSO 1 - INSTALLARE I VARI TOOL
 È necessario clonare i repositori hcxdumptool e hcxtools.
 ```Bash
 git clone https://github.com/ZerBea/hcxdumptool.git
@@ -29,7 +29,7 @@ cd hcxtools
 make && make install
 ```
 
-#### PASSO 2 - IMPOSTARE LA PROPRIA SCHEDA IN MODALITÀ MONITOR
+## PASSO 2 - IMPOSTARE LA PROPRIA SCHEDA IN MODALITÀ MONITOR
 Uno strumento per impostare la propria interfaccia wireless in modalità monitor è [Airmon-ng](https://aircrack-ng.org/doku.php?id=it:install_aircrack)
 ```Bash
 wget http://download.aircrack-ng.org/aircrack-ng-1.0.tar.gz
@@ -48,7 +48,7 @@ Per avere una conferma rilanciare il comando ```ifconfig```.
 
 
 
-#### PASSO 3 - CATTURARE PACCHETTI DI INTERESSE
+## PASSO 3 - CATTURARE PACCHETTI DI INTERESSE
 A questo punto è necessario catturare i pacchetti di interesse.<br>
 Il comando minimale è il seguente, dove il parametro **-o** indica il file di output sul quale si scriverà e il parametro **-i** indica la sorgente dalla quale si cattureranno i pacchetti.
 
@@ -72,7 +72,7 @@ hcxdumptool -o pacchetti.pcapng -i xmon --enable_status=1
 
 
 
-#### PASSO 4 - CONVERTIRE IL FILE OUTPUT DI HCXDUMPTOOL
+## PASSO 4 - CONVERTIRE IL FILE OUTPUT DI HCXDUMPTOOL
 Il file .pcapng deve ora essere convertito in un formato comprensibile ad hashcat.<br>
 In accordo a quanto previsto per la versione 6.2.5 di hashcat costruiamo un file con estensione .hc22000.
 
@@ -81,7 +81,7 @@ In accordo a quanto previsto per la versione 6.2.5 di hashcat costruiamo un file
  ```
  
  
- #### PASSO 5 - LANCIARE IL MECCANISMO DI BRUTEFORCE
+## PASSO 5 - LANCIARE IL MECCANISMO DI BRUTEFORCE
 Se si osserva il file appena creato esso segue la seguente forma:
 
 **PROTOCOL** * **TYPE** * **PMKID/MIC** * **MACAP** * **MACCLIENT** * **ESSID** * **ANONCE** * **EAPOL** * **MESSAGEPAIR**
@@ -109,12 +109,3 @@ Il parametro -a indica l'hash type e il parametro -w indica il profilo di worklo
 
 
 et voilà, tocca solamente attendere!
-
-
-
-
-
-
-
-
-
