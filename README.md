@@ -1,6 +1,10 @@
 # PMKID ATTACK
 
-Questo repository è di supporto all'articolo riguardo il PMKID ATTACK disponibile [qui](https://medium.com/@mariocuomo/pmkid-attack-parte-1-9ae5433ea85e).<br>
+<div align="center">
+ <img src="https://miro.medium.com/max/1354/1*D5RpNYKS1LzMb3sV8PMHbQ.png">
+</div>
+
+Questo repository è di supporto all'articolo riguardo il **PMKID ATTACK** disponibile [qui](https://medium.com/@mariocuomo/pmkid-attack-parte-1-9ae5433ea85e).<br>
 L'articolo tra ispirazione dal [post](https://hashcat.net/forum/thread-7717.html) pubblicato il 4 agosto 2018 sul forum di **hashcat** riguardo una vulnerabilità nel protocollo Wi-Fi Protected Access (WPA e WPA2).
 
 
@@ -109,3 +113,10 @@ Il parametro -a indica l'hash type e il parametro -w indica il profilo di worklo
 
 
 et voilà, tocca solamente attendere!
+
+---
+
+> **Art.615-ter. (Accesso abusivo ad un sistema informatico e telematico).<br>
+> Chiunque abusivamente si introduce in un sistema informatico o telematico protetto da misure di sicurezza ovvero vi si mantiene contro la volontà espressa o tacita di chi ha il diritto di escluderlo, è punito con la reclusione fino a tre anni.**
+
+---
