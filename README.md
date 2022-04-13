@@ -94,7 +94,7 @@ L'ESSID è espresso in esadecimale.<br>
 Al solo titolo di esempio, si lanci il seguente script per decodificarli:
 
 ```Bash
-awk -F "*" ' system("echo " $6 " | xxd -r -p; echo" ) }' hash.hc22000
+awk -F "*" '{ system("echo " $6 " | xxd -r -p; echo" ) }' hash.hc22000
 ```
  
 Si hanno tutte le informazioni necessarie per iniziare la computazione del PMKID.<br>
