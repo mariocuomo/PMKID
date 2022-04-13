@@ -74,6 +74,9 @@ Siamo interessati ai pacchetti EAPOL.
 hcxdumptool -o pacchetti.pcapng -i xmon --enable_status=1
 ```
 
+Il file creato può essere visualizzato con [wireshark](https://www.wireshark.org/).<br>
+È possibile filtrare i pacchetti di interesse con il filtro wireshark ```eapol && wlan.rsn.ie.pmkid```
+
 
 
 ## PASSO 4 - CONVERTIRE IL FILE OUTPUT DI HCXDUMPTOOL
