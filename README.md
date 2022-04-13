@@ -77,7 +77,9 @@ hcxdumptool -o pacchetti.pcapng -i xmon --enable_status=1
 Il file creato può essere visualizzato con [wireshark](https://www.wireshark.org/).<br>
 È possibile filtrare i pacchetti di interesse con il filtro wireshark ```eapol && wlan.rsn.ie.pmkid```
 
-
+<div align="center">
+ <img src="https://github.com/mariocuomo/PMKID/blob/main/resources/whireshark.png">
+</div>
 
 ## PASSO 4 - CONVERTIRE IL FILE OUTPUT DI HCXDUMPTOOL
 Il file .pcapng deve ora essere convertito in un formato comprensibile ad hashcat.<br>
@@ -86,7 +88,9 @@ In accordo a quanto previsto per la versione 6.2.5 di hashcat costruiamo un file
 ```Bash
  hcxpcapngtool -o hash.hc22000 -E wordlist pacchetti.pcapng
  ```
- 
+<div align="center">
+ <img src="https://github.com/mariocuomo/PMKID/blob/main/resources/hcxpcapngtool.png">
+</div>
  
 ## PASSO 5 - LANCIARE IL MECCANISMO DI BRUTEFORCE
 Se si osserva il file appena creato esso segue la seguente forma:
@@ -113,7 +117,9 @@ hashcat -m 22000 hash.hc22000 -a 3 -w 4 ?d?d?d?d?d?d?d?d
 
 Il parametro -a indica l'hash type e il parametro -w indica il profilo di workload.
 
-
+<div align="center">
+ <img src="https://github.com/mariocuomo/PMKID/blob/main/resources/hashcat.png">
+</div>
 
 et voilà, tocca solamente attendere!
 
