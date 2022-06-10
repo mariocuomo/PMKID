@@ -11,7 +11,7 @@ L'articolo tra ispirazione dal [post](https://hashcat.net/forum/thread-7717.html
 #### SCENARIO
 Un Client che non è in possesso della password di un Access Point cerca di ricevere un messaggio contenente un **PMKID** - una stringa cifrata il cui unico parametro ignoto è il **PMK**.<br>
 Il **PMK** è generato a partire dalla password in chiaro e altre varibili note al Client.<br>
-Conoscendo il processo generativo del PMK dalla password e quello del PMKID a partire dal PMK, il Client cerca di costruire un **PMKID*** a partire da password note.
+Conoscendo il processo generativo del PMK dalla password e quello del PMKID a partire dal PMK, il Client cerca di costruire un **PMKID** a partire da password note.
 
 
 #### TOOL NECESSARI
